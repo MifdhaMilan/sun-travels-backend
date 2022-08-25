@@ -20,7 +20,7 @@ public class Contract {
     private int cid;
     private Date start_date;
     private Date end_date;
-    private boolean  isValid;
+    private Boolean isValid;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Hotel hotel;

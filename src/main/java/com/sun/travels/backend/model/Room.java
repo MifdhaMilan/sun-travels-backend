@@ -20,7 +20,8 @@ public class Room {
     private String type;
     private int max_adults;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @JsonIgnore
     private Hotel hotel;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "room")

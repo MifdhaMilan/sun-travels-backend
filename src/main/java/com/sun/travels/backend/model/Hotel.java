@@ -27,7 +27,6 @@ public class Hotel {
     private Address address;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "hotel")
-    @JsonIgnore
     private List<Room> rooms;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "hotel")

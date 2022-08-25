@@ -7,20 +7,19 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class RoomContract {
     @EmbeddedId
-    private RoomContractKey id;
+    private RoomContractKey id = new RoomContractKey();
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @MapsId("rid")
     @JoinColumn(name = "room_id")
     private Room room;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @MapsId("cid")
     @JoinColumn(name = "contract_id")
     private Contract contract;
